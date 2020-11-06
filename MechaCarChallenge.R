@@ -1,5 +1,8 @@
+---------------------------
 # MPG Regression Analysis
+----------------------------
 # Load Dataset
+---------------
 setwd("~/Desktop/Berkeley/R-Studio/R_Analysis/R-Module-14/R_Programming-") #set working directory
 mechacar_mpg <- read.csv('MechaCar_mpg.csv',stringsAsFactors = F) #read in dataset
 head(mechacar_mpg) # inspect head of values
@@ -13,8 +16,9 @@ head(mechacar_mpg) # inspect head of values
 
 #View comprehensive table for independent and dependent values
  View(mechacar_mpg)
-
+-------------------------------------
 # Perform Multiple Linear Regression 
+-------------------------------------
 # Designate mpg as the independent variable
 # Designate dependent variables: vehicle.length, vehicle.weight, spoiler.angle, ground.clearance, AWD (all-wheel drive))
 lm(mpg ~ vehicle.length + vehicle.weight + spoiler.angle + ground.clearance + AWD, data = mechacar_mpg) #generate multiple linear regression model
@@ -54,3 +58,22 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 Residual standard error: 8.774 on 44 degrees of freedom
 Multiple R-squared:  0.7149,	Adjusted R-squared:  0.6825 
 F-statistic: 22.07 on 5 and 44 DF,  p-value: 5.35e-11
+
+------------------------
+# Suspension Coil Summary
+------------------------
+# Load Dataset
+suspension_coil <- read.csv('Suspension_Coil.csv',stringsAsFactors = F) #read in dataset
+head(suspension_coil) # inspect head of values
+ VehicleID Manufacturing_Lot      PSI
+1    V40858              Lot1 1498.763
+2    V40607              Lot1 1500.002
+3    V31443              Lot1 1500.643
+4     V6004              Lot1 1500.260
+5     V7000              Lot1 1498.403
+6    V17344              Lot1 1499.676
+
+-----------------------------------------------------------------------------
+#Summary statistics for suspension coil's pounds-per-inch continuous variable
+#run a simple linear regression model to compare cars and suspension coil
+suspension_coil_summary <- suspension_coil %>% group_by(VehicleID) %>% summarize(Mean_PSI=mean(PSI),SD_PSI=sd(PSI),Median_PSI=median(PSI),var_PSI=var(PSI))

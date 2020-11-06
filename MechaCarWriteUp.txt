@@ -1,6 +1,9 @@
 --------------------------------------------------
 MechaCar WriteUp - Challenge Statistical Analysis
 --------------------------------------------------
+-----------------------
+MPG regression
+-----------------------
 Equation summary from multiple regression analysis:
 
 mpg = -1.040e+02mx + 6.257
@@ -50,3 +53,32 @@ F-statistic: 22.07 on 5 and 44 DF,  p-value: 5.35e-11
 
 
 3. Does this linear model predict mpg of MechaCar prototypes effectively? Why or why not?
+
+
+---------------------------
+Suspension Coil Summary
+---------------------------
+Findings and interpretations of coil summary statistics:
+
+Based on table:
+
+
+
+Challenge question:
+The design specifications for the MechaCar suspension coils dictate 
+that the variance of the suspension coils must not exceed 
+100 pounds per inch. Does the current manufacturing data 
+meet this design specification? Why or why not?
+
+------------------------------
+Suspension Coil T-Test
+------------------------------
+-Determine if the suspension coil's pound-per-inch-results are 
+statistically different from the mean population results from 1,500 pounds 
+per inch.
+
+
+------------------------------
+Design Your Own Study
+------------------------------
+
