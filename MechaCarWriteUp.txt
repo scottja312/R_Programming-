@@ -61,14 +61,24 @@ Suspension Coil Summary
 Findings and interpretations of coil summary statistics:
 
 Based on table:
+Manufacturing_Lot Mean_PSI   SD_PSI      Median_PSI   var_PSI
+  <chr>                <dbl>     <dbl>      <dbl>        <dbl>
+1 Lot1                 1500.018   1.070525     1500.206     1.146024
+2 Lot2                 1499.571   3.183003     1499.873     10.131511 
+3 Lot3                 1499.004   14.832753    1498.981     220.010563  
 
+Lot 1 showed a mean_PSI of ~15
 
+Lot 3 showed the least compliant within the allowed coil statistical range.
 
 Challenge question:
 The design specifications for the MechaCar suspension coils dictate 
 that the variance of the suspension coils must not exceed 
 100 pounds per inch. Does the current manufacturing data 
 meet this design specification? Why or why not?
+
+No, the variance is shown to be exceptionally high for Lot 3, therefore 
+the design specification of 100 pounds per inch is not met for cars manufactured on lot 3. 
 
 ------------------------------
 Suspension Coil T-Test
@@ -77,6 +87,7 @@ Suspension Coil T-Test
 statistically different from the mean population results from 1,500 pounds 
 per inch.
 
+One-tail t-test: results are statistically significant from the mean of 1500 (p < 0.05)
 
 ------------------------------
 Design Your Own Study
