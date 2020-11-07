@@ -101,7 +101,6 @@ F-statistic: 22.07 on 5 and 44 DF,  p-value: 5.35e-11
 > sample_coil <- suspension_coil %>% sample_n(50) # randomly sample 50 data points
 > t.test(log10(sample_coil$PSI),mu=mean(log10(suspension_coil$PSI))) #compare sample versus population means
 # Results:
-
 One Sample t-test
 data:  log10(sample_coil$PSI)
 t = 1.0177, df = 49, p-value = 0.3138

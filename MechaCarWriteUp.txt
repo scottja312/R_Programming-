@@ -4,14 +4,13 @@ MechaCar WriteUp - Challenge Statistical Analysis
 -----------------------
 MPG regression
 -----------------------
-Equation summary from multiple regression analysis:
+Linear Equation summary from multiple regression analysis:
 
-mpg = -1.040e+02mx + 6.257
-mpg = -1.040e+02mx +
-mpg = -1.040e+0.2x
-mpg = -1.040e+0.2x
-mpg = -1.040e+0.2x
-mpg 
+mpg =  6.267e+00(vehicle.length) + -1.040e+02
+mpg =  1.245e-03(vehicle.weight) + -1.040e+02
+mpg =  6.877e-02(spoiler.angle) + -1.040e+02
+mpg =  3.546e+00(ground.clearance) + -1.040e+02
+mpg = -3.411e+00(AWD) + -1.040e+02
 
 Coefficients (obtained from R function):
      (Intercept)    vehicle.length    vehicle.weight     spoiler.angle  
@@ -21,16 +20,17 @@ ground.clearance               AWD
 
 
 1. Is the slope of the linear model considered to be zero? Why or why not?
-Based on re-arranging the equation on intercept and 
+Based on re-arranging the linear equation to show intercept and slope for mpg vs. metrics of vehicle.length, vehicle.weight,
+spoiler.angle, ground.clearance, and AWD, the slope is nearly zero when the values are averaged. 
 
 
 2. Which variables/coefficients provided a non-random amount of 
 variance to the mpg values in the dataset?
 
-Based on the output from the statistical summary function called:
-Call:
-lm(formula = mpg ~ vehicle.length + vehicle.weight + spoiler.angle + 
-    ground.clearance + AWD, data = mechacar_mpg)
+Based on the output from the statistical summary, the variables of ground.clearance,
+vehicle.length, and vehicle.weight provided a non-random amount of variance
+to the mpg values based on the p-values being very statistically significant (i.e. p-value <0.001). 
+
 
 Residuals:
      Min       1Q   Median       3Q      Max 
@@ -53,7 +53,10 @@ F-statistic: 22.07 on 5 and 44 DF,  p-value: 5.35e-11
 
 
 3. Does this linear model predict mpg of MechaCar prototypes effectively? Why or why not?
-
+Due to the number of variables, this linear model does not predict the mpg of MechaCar prototypes
+effectively. The multiple R-squared value of 0.7149 and adjusted R-squared value of 0.6825 show
+only a moderate correlation (ideally, R-squared values need to be close to 1), and therefore a low
+predictor of mpg when implemented into an equation. 
 
 ---------------------------
 Suspension Coil Summary
@@ -67,9 +70,11 @@ Manufacturing_Lot Mean_PSI   SD_PSI      Median_PSI   var_PSI
 2 Lot2                 1499.571   3.183003     1499.873     10.131511 
 3 Lot3                 1499.004   14.832753    1498.981     220.010563  
 
-Lot 1 showed a mean_PSI of ~15
-
-Lot 3 showed the least compliant within the allowed coil statistical range.
+Lot 1 showed the most competence in production with a mean PSI of ~1500 with the lowest standard deviation of all three car lots of
+1.070525. Lot 2 also showed competence in production with a mean PSI of also ~ 1500 (1499.873), a fairly low standard deviation
+of 3.183003, and variance of 10.131511, which falls below the allowed number of 100. Lot 3 showed the lowest quality of 
+regulation in suspension coil manufacturing with a mean PSI of 1499.004, highest standard deviation of 14.832753, and extremely 
+high variance of ~220.
 
 Challenge question:
 The design specifications for the MechaCar suspension coils dictate 
@@ -78,16 +83,44 @@ that the variance of the suspension coils must not exceed
 meet this design specification? Why or why not?
 
 No, the variance is shown to be exceptionally high for Lot 3, therefore 
-the design specification of 100 pounds per inch is not met for cars manufactured on lot 3. 
+the design specification of 100 pounds per inch is not met for cars manufactured on Lot 3. 
+Overall production quality would need to be improved to match the statistical data from Lot 1 and Lot 2, 
+in order to be compliant with the design specification.
 
 ------------------------------
 Suspension Coil T-Test
 ------------------------------
--Determine if the suspension coil's pound-per-inch-results are 
+Challenge question: 
+Determine if the suspension coil's pound-per-inch-results are 
 statistically different from the mean population results from 1,500 pounds 
 per inch.
 
-One-tail t-test: results are statistically significant from the mean of 1500 (p < 0.05)
+One-tail t-test: results are not statistically significant from the mean of 1500 (p < 0.05)
+
+# Results:
+One Sample t-test
+data:  log10(sample_coil$PSI)
+t = 1.0177, df = 49, p-value = 0.3138
+alternative hypothesis: true mean is not equal to 3.175948
+95 percent confidence interval: 
+3.175745 3.176568
+sample estimates:
+mean of x 
+ 3.176157 
+
+Two-tail t-test: results between samples are not statistically significant 
+
+# Results:
+Welch Two Sample t-test
+
+data:  log10(sample_coil$PSI) and log10(sample_coil2$PSI)
+t = 0.57496, df = 95.704, p-value = 0.5667
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -0.0004444800  0.0008069442
+sample estimates:
+mean of x mean of y 
+ 3.176157  3.175975 
 
 ------------------------------
 Design Your Own Study
