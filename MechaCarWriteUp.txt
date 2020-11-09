@@ -94,8 +94,8 @@ Challenge question:
 Determine if the suspension coil's pound-per-inch-results are 
 statistically different from the mean population results from 1,500 pounds 
 per inch.
-
-One-tail t-test: results are not statistically significant from the mean of 1500 (p < 0.05)
+-------------------------------------
+One-tail t-test: results are not statistically significant from the mean of 1500 (p > 0.05 at 0.3138)
 
 # Results:
 One Sample t-test
@@ -108,7 +108,9 @@ sample estimates:
 mean of x 
  3.176157 
 
-Two-tail t-test: results between samples are not statistically significant 
+---------------------------------------
+Two-tail t-test: p-vlaue resultant (p = 0.5667) between samples are not statistically significant, therefore overall the suspension coil's  
+pound-per-inch results are statistically significant from the mean population results.
 
 # Results:
 Welch Two Sample t-test
@@ -125,4 +127,23 @@ mean of x mean of y
 ------------------------------
 Design Your Own Study
 ------------------------------
+In designing a statistical study for MechaCar prototypes outperforming other cars on the market,
+the top metrics from a manufacturing standpoint to be collected on the cars would be mpg (miles per gallon), wheel drive status 
+(all-wheel-drive, rear, etc., which also affects fuel efficiency), ground clearance (how high the car is off the ground), number of cylinders (fuel efficiency related), 
+vehicle weight and length, transmission, battery type, and average cost of replacement of parts should 
+repairs be needed. Customer interested metrics would include color, cost of the car and class of the car, overall longevity of the car, an
+depreciation value, to name a few.
+The statistical question we would ask is what customer and manufacturer metrics would be the dependent variables
+in which to determine customer purchase propensity to purchase compared to purchasing from the competition
+which is the independent variable. The null hypothesis would be there is no statistical difference
+when compared to other cars and a customer would therefore purchase a competitor's over Mechacar,
+and the alternative hypothesis is that a statistical different compared to other cars
+and therefore the customer would choose purchasing MechaCar over the competitor.
+In order to test the validatity of the alternate and null hypothesis on MechaCar prototypes vs.
+competition, ANOVA would be the most likely statistical test to use. The data collected for
+MechaCar and competition will be collected based on the above-mentioned metrics (customer and manufacturer),
+and a distribution plot of the data will be graphed. ANOVA will determine if there is any statistical difference
+between the distribution of the data based on various metrics, and ultimately will determine whether to reject the null hypothesis
+and prove the MechaCar prototypes have competitive metrics that would give their cars the buying edge over other
+manufacturers. 
 
